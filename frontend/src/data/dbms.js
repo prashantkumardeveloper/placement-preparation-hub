@@ -1,0 +1,42 @@
+export const dbmsQuestions = [
+  {
+    id: 1,
+    title: "What is DBMS?",
+    difficulty: "Easy",
+    company: "TCS",
+    platform: "Interview",
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "Difference between DBMS and RDBMS",
+    difficulty: "Easy",
+    company: "Infosys",
+    platform: "Interview",
+    link: "#",
+  },
+  {
+    id: 3,
+    title: "Normalization",
+    difficulty: "Medium",
+    company: "Accenture",
+    platform: "Interview",
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "Primary Key vs Foreign Key",
+    difficulty: "Medium",
+    company: "Capgemini",
+    platform: "Interview",
+    link: "#",
+  },
+  {
+    id: 5,
+    title: "ACID Properties",
+    difficulty: "Hard",
+    company: "Amazon",
+    platform: "Interview",
+    link: "#",
+  },
+];
