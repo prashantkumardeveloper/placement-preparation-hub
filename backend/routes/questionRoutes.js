@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   getQuestions,
+  getStats,
   addQuestion,
   updateQuestion,
   deleteQuestion,
@@ -14,12 +15,27 @@ const {
 
 const router = express.Router();
 
-// Public Route
+// ======================
+// Public Routes
+// ======================
+
+// Get Dashboard Stats
+router.get("/stats", getStats);
+
+// Get All Questions
 router.get("/", getQuestions);
 
+// ======================
 // Admin Routes
+// ======================
+
+// Add Question
 router.post("/", protect, adminOnly, addQuestion);
+
+// Update Question
 router.put("/:id", protect, adminOnly, updateQuestion);
+
+// Delete Question
 router.delete("/:id", protect, adminOnly, deleteQuestion);
 
 module.exports = router;

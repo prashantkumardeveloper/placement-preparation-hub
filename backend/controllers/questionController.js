@@ -42,6 +42,48 @@ const getQuestions = async (req, res) => {
 };
 
 // ======================
+// Dashboard Stats
+// ======================
+const getStats = async (req, res) => {
+  try {
+
+    const dsa = await Question.countDocuments({
+      category: "DSA",
+    });
+
+    const aptitude = await Question.countDocuments({
+      category: "Aptitude",
+    });
+
+    const csFundamentals = await Question.countDocuments({
+      category: "CS Fundamentals",
+    });
+
+    const companies = await Question.countDocuments({
+      company: { $exists: true, $ne: "" },
+    });
+
+    res.status(200).json({
+      success: true,
+      stats: {
+        dsa,
+        aptitude,
+        csFundamentals,
+        companies,
+      },
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+
+  }
+};
+
+// ======================
 // Add Question
 // ======================
 const addQuestion = async (req, res) => {
@@ -137,6 +179,7 @@ const deleteQuestion = async (req, res) => {
 
 module.exports = {
   getQuestions,
+  getStats,
   addQuestion,
   updateQuestion,
   deleteQuestion,
