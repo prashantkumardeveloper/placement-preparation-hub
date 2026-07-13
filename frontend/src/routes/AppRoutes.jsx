@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Dashboard from "../pages/Dashboard";
+import AdminDashboard from "../pages/AdminDashboard";
+import AddQuestion from "../pages/AddQuestion";
 
 import DSA from "../pages/DSA";
 import Arrays from "../pages/Arrays";
@@ -188,6 +190,9 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/add-question" element={<AddQuestion />} />
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
